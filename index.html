@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda de Ana & Carlos - 25.10.2025</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Markdown Parser for AI responses -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        'wedding-gold': '#D4AF37',
+                        'wedding-sage': '#8A9A5B',
+                        'wedding-cream': '#F9F7F2',
+                        'wedding-text': '#4A4A4A'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1519225468063-50126bc64f3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Chatbot Animations */
+        .chat-enter {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .typing-dot {
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-wedding-cream text-wedding-text font-sans smooth-scroll antialiased selection:bg-wedding-sage selection:text-white relative">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 transition-all duration-300 bg-white/90 backdrop-blur-sm shadow-sm py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl font-bold tracking-widest text-wedding-sage">A & C</a>
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-wider">
+                <a href="#historia" class="hover:text-wedding-gold transition-colors">Nuestra Historia</a>
+                <a href="#detalles" class="hover:text-wedding-gold transition-colors">Detalles</a>
+                <a href="#fotos" class="hover:text-wedding-gold transition-colors font-bold text-wedding-sage">Compartir Fotos</a>
+                <a href="#rsvp" class="hover:text-wedding-gold transition-colors">Confirmar</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-wedding-text">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 flex flex-col items-center space-y-4">
+            <a href="#historia" class="text-sm uppercase tracking-wider hover:text-wedding-gold">Nuestra Historia</a>
+            <a href="#detalles" class="text-sm uppercase tracking-wider hover:text-wedding-gold">Detalles</a>
+            <a href="#fotos" class="text-sm uppercase tracking-wider font-bold text-wedding-sage">Compartir Fotos</a>
+            <a href="#rsvp" class="text-sm uppercase tracking-wider hover:text-wedding-gold">Confirmar</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg h-screen flex flex-col justify-center items-center text-white text-center px-4">
+        <p class="text-lg md:text-xl tracking-[0.3em] uppercase mb-4 fade-in-up" style="animation-delay: 0.2s;">Nos casamos</p>
+        <h1 class="font-serif text-6xl md:text-8xl mb-6 fade-in-up" style="animation-delay: 0.4s;">Ana & Carlos</h1>
+        <div class="h-px w-24 bg-white mb-6 fade-in-up" style="animation-delay: 0.6s;"></div>
+        <p class="text-xl md:text-2xl font-light mb-8 fade-in-up" style="animation-delay: 0.8s;">25 de Octubre, 2025</p>
+        
+        <!-- Countdown -->
+        <div id="countdown" class="flex space-x-4 md:space-x-8 fade-in-up text-center" style="animation-delay: 1s;">
+            <!-- Javascript will populate this -->
+        </div>
+
+        <a href="#rsvp" class="mt-12 px-8 py-3 border border-white text-white hover:bg-white hover:text-gray-900 transition-all duration-300 rounded-full uppercase text-xs tracking-widest fade-in-up" style="animation-delay: 1.2s;">
+            Acompáñanos
+        </a>
+    </header>
+
+    <!-- Intro Section -->
+    <section id="historia" class="py-20 md:py-32 px-6 text-center container mx-auto">
+        <i data-lucide="heart" class="w-8 h-8 mx-auto text-wedding-gold mb-6"></i>
+        <h2 class="font-serif text-4xl md:text-5xl text-wedding-text mb-8">¡Celebra con nosotros!</h2>
+        <p class="max-w-2xl mx-auto text-lg text-gray-600 leading-relaxed">
+            Después de cinco años de aventuras, risas y mucho amor, hemos decidido dar el siguiente paso. 
+            Queremos que seas parte de este día tan especial, rodeados de las personas que más queremos.
+        </p>
+    </section>
+
+    <!-- Photo Sharing Section -->
+    <section id="fotos" class="bg-wedding-sage/10 py-20 px-6">
+        <div class="container mx-auto max-w-4xl text-center bg-white p-10 md:p-16 rounded-xl shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-wedding-sage to-wedding-gold"></div>
+            
+            <div class="inline-block p-4 rounded-full bg-wedding-sage/20 mb-6">
+                <i data-lucide="camera" class="w-10 h-10 text-wedding-sage"></i>
+            </div>
+            
+            <h2 class="font-serif text-3xl md:text-5xl mb-4 text-gray-800">Captura el momento</h2>
+            <p class="text-gray-600 mb-8 max-w-lg mx-auto">
+                Sabemos que tomarás fotos increíbles. Ayúdanos a recopilar todos los recuerdos de nuestro gran día en un solo lugar.
+            </p>
+
+            <!-- Main CTA Button -->
+            <a href="https://photos.google.com/" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white transition-all duration-200 bg-wedding-sage rounded-full hover:bg-green-700 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-wedding-sage">
+                <span class="mr-2">Subir fotos a Google Fotos</span>
+                <i data-lucide="upload-cloud" class="w-5 h-5 group-hover:animate-bounce"></i>
+            </a>
+
+            <p class="mt-4 text-xs text-gray-500 uppercase tracking-wider">
+                *Haz clic para abrir el álbum compartido
+            </p>
+        </div>
+    </section>
+
+    <!-- Details Section -->
+    <section id="detalles" class="py-20 px-6 container mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1 space-y-10">
+                <!-- Ceremony -->
+                <div class="flex items-start">
+                    <div class="bg-wedding-cream p-3 rounded-full mr-4">
+                        <i data-lucide="church" class="w-6 h-6 text-wedding-gold"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-2xl mb-2">Ceremonia Religiosa</h3>
+                        <p class="font-bold text-gray-800">4:00 PM</p>
+                        <p class="text-gray-600">Parroquia de San Miguel</p>
+                        <p class="text-sm text-gray-500 mt-1">Calle Principal #123, Centro Histórico</p>
+                        <a href="#" class="text-wedding-sage text-sm font-bold mt-2 inline-block hover:underline">Ver mapa →</a>
+                    </div>
+                </div>
+
+                <!-- Reception -->
+                <div class="flex items-start">
+                    <div class="bg-wedding-cream p-3 rounded-full mr-4">
+                        <i data-lucide="wine" class="w-6 h-6 text-wedding-gold"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-2xl mb-2">Recepción y Fiesta</h3>
+                        <p class="font-bold text-gray-800">6:00 PM - 2:00 AM</p>
+                        <p class="text-gray-600">Hacienda El Sueño</p>
+                        <p class="text-sm text-gray-500 mt-1">Carretera Nacional Km 45</p>
+                        <a href="#" class="text-wedding-sage text-sm font-bold mt-2 inline-block hover:underline">Ver mapa →</a>
+                    </div>
+                </div>
+
+                <!-- Dress Code -->
+                <div class="flex items-start">
+                    <div class="bg-wedding-cream p-3 rounded-full mr-4">
+                        <i data-lucide="shirt" class="w-6 h-6 text-wedding-gold"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-2xl mb-2">Código de Vestimenta</h3>
+                        <p class="text-gray-600">Formal de Día / Cóctel</p>
+                        <p class="text-sm text-gray-500 mt-1">Preferiblemente colores claros. Reservar el blanco para la novia.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-1 md:order-2 h-96 md:h-full min-h-[400px] rounded-2xl overflow-hidden shadow-2xl relative">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1169&q=80" alt="Lugar de la boda" class="absolute inset-0 w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="py-20 bg-wedding-cream px-6">
+        <div class="container mx-auto max-w-2xl">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl mb-4">Confirma tu asistencia</h2>
+                <p class="text-gray-600">Por favor confirma antes del 1 de Septiembre, 2025</p>
+            </div>
+
+            <form id="rsvpForm" class="bg-white p-8 md:p-10 rounded-lg shadow-md space-y-6">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2" for="name">Nombre Completo</label>
+                    <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-wedding-sage focus:ring-2 focus:ring-wedding-sage/20 outline-none transition-colors" type="text" id="name" placeholder="Ej. Juan Pérez" required>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2" for="guests">Número de Asistentes</label>
+                    <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-wedding-sage focus:ring-2 focus:ring-wedding-sage/20 outline-none" id="guests">
+                        <option value="1">1 Persona</option>
+                        <option value="2">2 Personas</option>
+                        <option value="0">No podré asistir</option>
+                    </select>
+                </div>
+
+                <div class="relative">
+                    <div class="flex justify-between items-end mb-2">
+                         <label class="block text-sm font-bold text-gray-700" for="message">Mensaje para los Novios</label>
+                         <button type="button" onclick="openWishesGenerator()" class="text-xs flex items-center text-wedding-sage hover:text-wedding-gold transition-colors font-semibold">
+                            <i data-lucide="sparkles" class="w-3 h-3 mr-1"></i>
+                            Ayúdame a escribir
+                         </button>
+                    </div>
+                    <textarea class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-wedding-sage focus:ring-2 focus:ring-wedding-sage/20 outline-none h-32" id="message" placeholder="¿Eres alérgico a algo? ¿Alguna canción que no puede faltar?"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-wedding-text text-white font-bold py-4 rounded-lg hover:bg-black transition-colors uppercase tracking-widest text-sm">
+                    Enviar Confirmación
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-100">
+        <div class="container mx-auto text-center px-6">
+            <h2 class="font-serif text-3xl font-bold text-wedding-sage mb-6">Ana & Carlos</h2>
+            <p class="text-gray-500 italic mb-8">"El amor no hace girar al mundo. El amor es lo que hace que el viaje valga la pena."</p>
+            
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-wedding-sage transition-colors"><i data-lucide="instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-wedding-sage transition-colors"><i data-lucide="facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-wedding-sage transition-colors"><i data-lucide="mail"></i></a>
+            </div>
+
+            <p class="text-xs text-gray-400 uppercase tracking-widest">
+                &copy; 2025. Hecho con amor.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="modal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center px-4">
+        <div class="bg-white p-8 rounded-lg max-w-sm w-full text-center transform transition-all scale-100 shadow-2xl">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="check" class="text-green-600 w-8 h-8"></i>
+            </div>
+            <h3 class="font-serif text-2xl mb-2">¡Gracias!</h3>
+            <p class="text-gray-600 mb-6">Hemos recibido tu confirmación. ¡Nos vemos en la boda!</p>
+            <button onclick="closeModal()" class="bg-wedding-sage text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors w-full">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- AI Wishes Generator Modal -->
+    <div id="wishes-modal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center px-4">
+        <div class="bg-white p-6 md:p-8 rounded-xl max-w-md w-full shadow-2xl relative">
+            <button onclick="closeWishesModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            
+            <div class="text-center mb-6">
+                <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-purple-100 text-purple-600 mb-3">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-gray-800">Creador de Dedicatorias</h3>
+                <p class="text-sm text-gray-500 mt-2">Dinos un poco sobre ti y la IA escribirá un mensaje hermoso.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">¿Qué eres de los novios?</label>
+                    <select id="relation-input" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 outline-none">
+                        <option value="Amigo cercano">Amigo/a cercano/a</option>
+                        <option value="Familiar">Familiar (Tío, Primo, etc.)</option>
+                        <option value="Compañero de trabajo">Compañero/a de trabajo</option>
+                        <option value="Amigo de la infancia">Amigo/a de la infancia</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Tono del mensaje</label>
+                    <select id="tone-input" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 outline-none">
+                        <option value="Emotivo y cariñoso">Emotivo y cariñoso ❤️</option>
+                        <option value="Divertido y con humor">Divertido y con humor 😄</option>
+                        <option value="Formal y elegante">Formal y elegante 🎩</option>
+                        <option value="Corto y directo">Corto y dulce ✨</option>
+                    </select>
+                </div>
+
+                <button onclick="generateWish()" id="generate-btn" class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-3 rounded-lg hover:shadow-lg transition-all flex justify-center items-center">
+                    <span>Generar Mensaje Mágico</span>
+                    <i data-lucide="wand-2" class="w-4 h-4 ml-2"></i>
+                </button>
+
+                <div id="wishes-result" class="hidden mt-4">
+                    <label class="block text-xs font-semibold text-gray-500 mb-1 uppercase">Tu mensaje sugerido:</label>
+                    <div class="relative">
+                        <textarea id="generated-text" readonly class="w-full p-3 bg-purple-50 border border-purple-100 rounded-lg text-sm text-gray-700 h-24 resize-none focus:outline-none"></textarea>
+                        <button onclick="useGeneratedWish()" class="absolute bottom-2 right-2 bg-white text-purple-600 text-xs px-3 py-1 rounded border border-purple-200 hover:bg-purple-50 font-semibold shadow-sm">
+                            Usar esto
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Chatbot Button & Interface -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
+        <!-- Chat Window -->
+        <div id="chat-window" class="hidden mb-4 bg-white w-80 md:w-96 rounded-2xl shadow-2xl border border-gray-100 overflow-hidden chat-enter flex flex-col h-[500px]">
+            <!-- Header -->
+            <div class="bg-wedding-sage p-4 text-white flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-2">
+                        <i data-lucide="bot" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Asistente de Bodas</h4>
+                        <p class="text-xs text-white/80">Pregúntame lo que sea</p>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-white/80 hover:text-white">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <!-- Messages Area -->
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 bg-gray-50 text-sm">
+                <!-- Welcome Message -->
+                <div class="flex items-start">
+                    <div class="bg-wedding-sage/10 p-2 rounded-full mr-2 flex-shrink-0">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-wedding-sage"></i>
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]">
+                        <p class="text-gray-700">¡Hola! Soy el asistente virtual de la boda de Ana y Carlos. 💍✨</p>
+                        <p class="text-gray-700 mt-2">Puedo ayudarte con horarios, ubicación o código de vestimenta. ¿Qué necesitas saber?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-3 bg-white border-t border-gray-100">
+                <form onsubmit="handleChatSubmit(event)" class="relative">
+                    <input id="chat-input" type="text" placeholder="Escribe tu pregunta..." class="w-full pl-4 pr-12 py-3 bg-gray-100 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-wedding-sage/50 border-transparent transition-all">
+                    <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-wedding-sage text-white rounded-full hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" id="send-btn">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- FAB Button -->
+        <button onclick="toggleChat()" class="group bg-wedding-sage hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center">
+            <i data-lucide="message-circle" class="w-7 h-7"></i>
+            <span class="absolute right-full mr-3 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                ¿Tienes dudas?
+            </span>
+        </button>
+    </div>
+
+    <!-- Gemini API Logic -->
+    <script>
+        const apiKey = ""; // Set by environment
+
+        async function callGemini(userPrompt, systemInstruction = "") {
+            if (!apiKey) {
+                console.error("API Key is missing.");
+                // alert("Por favor configura tu API Key en el código."); // Uncomment for debugging
+                return "Error: API Key no configurada. Por favor revisa el código.";
+            }
+
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            
+            const payload = {
+                contents: [{
+                    parts: [{ text: userPrompt }]
+                }],
+                systemInstruction: {
+                    parts: [{ text: systemInstruction }]
+                }
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                
+                const data = await response.json();
+                return data.candidates?.[0]?.content?.parts?.[0]?.text || "Lo siento, no pude generar una respuesta.";
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                return "Hubo un error al conectar con el asistente.";
+            }
+        }
+
+        // --- Wishes Generator Logic ---
+        const wishesModal = document.getElementById('wishes-modal');
+        const generatedTextArea = document.getElementById('generated-text');
+        const wishesResult = document.getElementById('wishes-result');
+        const generateBtn = document.getElementById('generate-btn');
+
+        function openWishesGenerator() {
+            wishesModal.classList.remove('hidden');
+        }
+
+        function closeWishesModal() {
+            wishesModal.classList.add('hidden');
+            wishesResult.classList.add('hidden');
+            generatedTextArea.value = '';
+        }
+
+        async function generateWish() {
+            const relation = document.getElementById('relation-input').value;
+            const tone = document.getElementById('tone-input').value;
+            
+            // UI Loading State
+            generateBtn.disabled = true;
+            generateBtn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 mr-2 animate-spin"></i> Escribiendo...`;
+            lucide.createIcons();
+
+            const prompt = `Escribe un mensaje corto de felicitación para boda (RSVP).
+            Relación: ${relation}.
+            Tono: ${tone}.
+            Novios: Ana y Carlos.
+            Idioma: Español.
+            Máximo 2 frases.`;
+
+            const response = await callGemini(prompt, "Eres un asistente creativo que ayuda a escribir mensajes para libros de visitas de bodas.");
+
+            generatedTextArea.value = response.trim();
+            wishesResult.classList.remove('hidden');
+            
+            // Reset Button
+            generateBtn.disabled = false;
+            generateBtn.innerHTML = `<span>Regenerar</span><i data-lucide="refresh-cw" class="w-4 h-4 ml-2"></i>`;
+            lucide.createIcons();
+        }
+
+        function useGeneratedWish() {
+            document.getElementById('message').value = generatedTextArea.value;
+            closeWishesModal();
+            // Scroll to message box smoothly
+            document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });
+        }
+
+
+        // --- Chatbot Logic ---
+        const chatWindow = document.getElementById('chat-window');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        // Extract wedding details from DOM for context
+        function getPageContext() {
+            return `
+            Información de la boda:
+            - Novios: Ana y Carlos.
+            - Fecha: 25 de Octubre, 2025.
+            - Ceremonia: 4:00 PM en Parroquia de San Miguel (Calle Principal #123).
+            - Recepción: 6:00 PM - 2:00 AM en Hacienda El Sueño (Carretera Nacional Km 45).
+            - Código de Vestimenta: Formal de Día / Cóctel. Colores claros, blanco reservado para la novia.
+            - RSVP: Antes del 1 de Septiembre, 2025.
+            - Regalos: No especificado, pero la presencia es lo más importante.
+            - Fotos: Hay un enlace a Google Fotos para subir recuerdos.
+            
+            Instrucciones para la IA:
+            Responde de manera amable, breve y servicial en Español. Eres el asistente virtual de esta boda. Usa emojis ocasionalmente.
+            `;
+        }
+
+        function toggleChat() {
+            chatWindow.classList.toggle('hidden');
+            if (!chatWindow.classList.contains('hidden')) {
+                chatInput.focus();
+            }
+        }
+
+        function appendMessage(text, isUser) {
+            const div = document.createElement('div');
+            div.className = `flex ${isUser ? 'justify-end' : 'items-start'} animate-fade-in`;
+            
+            if (isUser) {
+                div.innerHTML = `
+                    <div class="bg-wedding-sage text-white p-3 rounded-2xl rounded-tr-none shadow-sm max-w-[85%]">
+                        <p>${text}</p>
+                    </div>
+                `;
+            } else {
+                // Parse markdown for bot responses
+                const parsedText = marked.parse(text);
+                div.innerHTML = `
+                    <div class="bg-wedding-sage/10 p-2 rounded-full mr-2 flex-shrink-0">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-wedding-sage"></i>
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%] prose prose-sm prose-p:my-1 prose-headings:my-2">
+                        ${parsedText}
+                    </div>
+                `;
+            }
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            lucide.createIcons();
+        }
+
+        function showTypingIndicator() {
+            const div = document.createElement('div');
+            div.id = 'typing-indicator';
+            div.className = 'flex items-start';
+            div.innerHTML = `
+                <div class="bg-wedding-sage/10 p-2 rounded-full mr-2 flex-shrink-0">
+                    <i data-lucide="bot" class="w-4 h-4 text-wedding-sage"></i>
+                </div>
+                <div class="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 flex space-x-1">
+                    <div class="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
+                    <div class="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
+                    <div class="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
+                </div>
+            `;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            lucide.createIcons();
+        }
+
+        function removeTypingIndicator() {
+            const indicator = document.getElementById('typing-indicator');
+            if (indicator) indicator.remove();
+        }
+
+        async function handleChatSubmit(e) {
+            e.preventDefault();
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            // User Message
+            appendMessage(text, true);
+            chatInput.value = '';
+            sendBtn.disabled = true;
+
+            // Bot Typing
+            showTypingIndicator();
+
+            // API Call
+            const systemPrompt = getPageContext();
+            const reply = await callGemini(text, systemPrompt);
+
+            // Bot Reply
+            removeTypingIndicator();
+            appendMessage(reply, false);
+            sendBtn.disabled = false;
+        }
+
+        // --- Common ---
+        // Close modal on outside click
+        window.onclick = function(event) {
+            if (event.target == wishesModal) {
+                closeWishesModal();
+            }
+        }
+    </script>
+
+    <!-- Original Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form Handling
+        const form = document.getElementById('rsvpForm');
+        const modal = document.getElementById('modal');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            modal.classList.remove('hidden');
+            form.reset();
+        });
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        // Countdown Logic
+        const weddingDate = new Date("October 25, 2025 16:00:00").getTime();
+
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            const timeHTML = `
+                <div class="flex flex-col items-center mx-2 md:mx-4">
+                    <span class="text-2xl md:text-4xl font-serif font-bold">${days}</span>
+                    <span class="text-xs uppercase tracking-widest mt-1">Días</span>
+                </div>
+                <div class="flex flex-col items-center mx-2 md:mx-4">
+                    <span class="text-2xl md:text-4xl font-serif font-bold">${hours}</span>
+                    <span class="text-xs uppercase tracking-widest mt-1">Hs</span>
+                </div>
+                <div class="flex flex-col items-center mx-2 md:mx-4">
+                    <span class="text-2xl md:text-4xl font-serif font-bold">${minutes}</span>
+                    <span class="text-xs uppercase tracking-widest mt-1">Min</span>
+                </div>
+            `;
+
+            const countdownEl = document.getElementById("countdown");
+            if(countdownEl) countdownEl.innerHTML = timeHTML;
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                if(countdownEl) countdownEl.innerHTML = "¡Es hoy!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
