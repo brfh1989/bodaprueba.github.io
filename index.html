@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boda de Ana & Carlos - 25.10.2025</title>
+    <title>Boda de Maria Yutzil & Gilberto Daniel - 21.03.2026</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,6 +40,7 @@
 
     <style>
         .hero-bg {
+            /* Imagen de fondo romántica y suave actualizada */
             background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1519225468063-50126bc64f3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
@@ -83,11 +84,11 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-40 transition-all duration-300 bg-white/90 backdrop-blur-sm shadow-sm py-4">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="font-serif text-2xl font-bold tracking-widest text-wedding-sage">A & C</a>
+            <a href="#" class="font-serif text-2xl font-bold tracking-widest text-wedding-sage">M & G</a>
             <div class="hidden md:flex space-x-8 text-sm uppercase tracking-wider">
-                <a href="#historia" class="hover:text-wedding-gold transition-colors">Nuestra Historia</a>
+                <a href="#bienvenida" class="hover:text-wedding-gold transition-colors">Bienvenida</a>
+                <a href="#fotos" class="hover:text-wedding-gold transition-colors font-bold text-wedding-sage">Álbum de Fotos</a>
                 <a href="#detalles" class="hover:text-wedding-gold transition-colors">Detalles</a>
-                <a href="#fotos" class="hover:text-wedding-gold transition-colors font-bold text-wedding-sage">Compartir Fotos</a>
                 <a href="#rsvp" class="hover:text-wedding-gold transition-colors">Confirmar</a>
             </div>
             <!-- Mobile Menu Button -->
@@ -97,9 +98,9 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 flex flex-col items-center space-y-4">
-            <a href="#historia" class="text-sm uppercase tracking-wider hover:text-wedding-gold">Nuestra Historia</a>
+            <a href="#bienvenida" class="text-sm uppercase tracking-wider hover:text-wedding-gold">Bienvenida</a>
+            <a href="#fotos" class="text-sm uppercase tracking-wider font-bold text-wedding-sage">Álbum de Fotos</a>
             <a href="#detalles" class="text-sm uppercase tracking-wider hover:text-wedding-gold">Detalles</a>
-            <a href="#fotos" class="text-sm uppercase tracking-wider font-bold text-wedding-sage">Compartir Fotos</a>
             <a href="#rsvp" class="text-sm uppercase tracking-wider hover:text-wedding-gold">Confirmar</a>
         </div>
     </nav>
@@ -107,53 +108,56 @@
     <!-- Hero Section -->
     <header class="hero-bg h-screen flex flex-col justify-center items-center text-white text-center px-4">
         <p class="text-lg md:text-xl tracking-[0.3em] uppercase mb-4 fade-in-up" style="animation-delay: 0.2s;">Nos casamos</p>
-        <h1 class="font-serif text-6xl md:text-8xl mb-6 fade-in-up" style="animation-delay: 0.4s;">Ana & Carlos</h1>
+        <h1 class="font-serif text-5xl md:text-7xl mb-6 fade-in-up leading-tight" style="animation-delay: 0.4s;">
+            Maria Yutzil <br> <span class="text-4xl md:text-6xl italic">&</span> <br> Gilberto Daniel
+        </h1>
         <div class="h-px w-24 bg-white mb-6 fade-in-up" style="animation-delay: 0.6s;"></div>
-        <p class="text-xl md:text-2xl font-light mb-8 fade-in-up" style="animation-delay: 0.8s;">25 de Octubre, 2025</p>
+        <p class="text-xl md:text-2xl font-light mb-8 fade-in-up" style="animation-delay: 0.8s;">21 de Marzo, 2026</p>
         
         <!-- Countdown -->
         <div id="countdown" class="flex space-x-4 md:space-x-8 fade-in-up text-center" style="animation-delay: 1s;">
             <!-- Javascript will populate this -->
         </div>
 
-        <a href="#rsvp" class="mt-12 px-8 py-3 border border-white text-white hover:bg-white hover:text-gray-900 transition-all duration-300 rounded-full uppercase text-xs tracking-widest fade-in-up" style="animation-delay: 1.2s;">
-            Acompáñanos
+        <a href="#fotos" class="mt-12 px-8 py-3 bg-white text-gray-900 hover:bg-wedding-cream hover:scale-105 transition-all duration-300 rounded-full uppercase text-xs tracking-widest font-bold fade-in-up shadow-lg" style="animation-delay: 1.2s;">
+            Compartir Fotos
         </a>
     </header>
 
     <!-- Intro Section -->
-    <section id="historia" class="py-20 md:py-32 px-6 text-center container mx-auto">
+    <section id="bienvenida" class="py-20 md:py-32 px-6 text-center container mx-auto">
         <i data-lucide="heart" class="w-8 h-8 mx-auto text-wedding-gold mb-6"></i>
-        <h2 class="font-serif text-4xl md:text-5xl text-wedding-text mb-8">¡Celebra con nosotros!</h2>
+        <h2 class="font-serif text-4xl md:text-5xl text-wedding-text mb-8">Bienvenidos a nuestra boda</h2>
         <p class="max-w-2xl mx-auto text-lg text-gray-600 leading-relaxed">
-            Después de cinco años de aventuras, risas y mucho amor, hemos decidido dar el siguiente paso. 
-            Queremos que seas parte de este día tan especial, rodeados de las personas que más queremos.
+            Estamos muy emocionados de compartir este día tan especial con ustedes. 
+            Queremos que cada momento quede guardado para siempre, no solo en nuestra memoria, sino también en imágenes.
         </p>
     </section>
 
-    <!-- Photo Sharing Section -->
-    <section id="fotos" class="bg-wedding-sage/10 py-20 px-6">
-        <div class="container mx-auto max-w-4xl text-center bg-white p-10 md:p-16 rounded-xl shadow-xl relative overflow-hidden">
+    <!-- Photo Sharing Section (Highlighted for Maria & Gilberto) -->
+    <section id="fotos" class="bg-wedding-sage/10 py-20 px-6 scroll-mt-20">
+        <div class="container mx-auto max-w-4xl text-center bg-white p-10 md:p-16 rounded-xl shadow-xl relative overflow-hidden ring-1 ring-wedding-sage/20">
             <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-wedding-sage to-wedding-gold"></div>
             
-            <div class="inline-block p-4 rounded-full bg-wedding-sage/20 mb-6">
+            <div class="inline-block p-4 rounded-full bg-wedding-sage/20 mb-6 animate-pulse">
                 <i data-lucide="camera" class="w-10 h-10 text-wedding-sage"></i>
             </div>
             
-            <h2 class="font-serif text-3xl md:text-5xl mb-4 text-gray-800">Captura el momento</h2>
-            <p class="text-gray-600 mb-8 max-w-lg mx-auto">
-                Sabemos que tomarás fotos increíbles. Ayúdanos a recopilar todos los recuerdos de nuestro gran día en un solo lugar.
+            <h2 class="font-serif text-3xl md:text-5xl mb-4 text-gray-800">Nuestro Álbum Digital</h2>
+            <p class="text-gray-600 mb-8 max-w-lg mx-auto text-lg">
+                Ayúdanos a ver la boda desde tus ojos. Hemos creado un álbum compartido en Google Fotos para recopilar todos los videos y fotografías que tomen durante el evento.
             </p>
 
             <!-- Main CTA Button -->
-            <a href="https://photos.google.com/" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white transition-all duration-200 bg-wedding-sage rounded-full hover:bg-green-700 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-wedding-sage">
-                <span class="mr-2">Subir fotos a Google Fotos</span>
-                <i data-lucide="upload-cloud" class="w-5 h-5 group-hover:animate-bounce"></i>
+            <a href="https://photos.app.goo.gl/LXoPHgd5Cd6SyCv79" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center justify-center px-8 py-5 text-lg font-semibold text-white transition-all duration-200 bg-wedding-sage rounded-full hover:bg-green-700 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-wedding-sage">
+                <span class="mr-3">Subir mis fotos y videos</span>
+                <i data-lucide="upload-cloud" class="w-6 h-6 group-hover:animate-bounce"></i>
             </a>
 
-            <p class="mt-4 text-xs text-gray-500 uppercase tracking-wider">
-                *Haz clic para abrir el álbum compartido
-            </p>
+            <div class="mt-8 flex justify-center items-center space-x-2 text-sm text-gray-500">
+                <i data-lucide="smartphone" class="w-4 h-4"></i>
+                <span>Compatible con iPhone y Android</span>
+            </div>
         </div>
     </section>
 
@@ -169,9 +173,9 @@
                     <div>
                         <h3 class="font-serif text-2xl mb-2">Ceremonia Religiosa</h3>
                         <p class="font-bold text-gray-800">4:00 PM</p>
-                        <p class="text-gray-600">Parroquia de San Miguel</p>
-                        <p class="text-sm text-gray-500 mt-1">Calle Principal #123, Centro Histórico</p>
-                        <a href="#" class="text-wedding-sage text-sm font-bold mt-2 inline-block hover:underline">Ver mapa →</a>
+                        <p class="text-gray-600">Parroquia de San José</p> <!-- Placeholder, edit as needed -->
+                        <p class="text-sm text-gray-500 mt-1">Av. Vallarta #500</p>
+                        <a href="#" class="text-wedding-sage text-sm font-bold mt-2 inline-block hover:underline">Ver ubicación en Maps →</a>
                     </div>
                 </div>
 
@@ -181,11 +185,11 @@
                         <i data-lucide="wine" class="w-6 h-6 text-wedding-gold"></i>
                     </div>
                     <div>
-                        <h3 class="font-serif text-2xl mb-2">Recepción y Fiesta</h3>
-                        <p class="font-bold text-gray-800">6:00 PM - 2:00 AM</p>
-                        <p class="text-gray-600">Hacienda El Sueño</p>
-                        <p class="text-sm text-gray-500 mt-1">Carretera Nacional Km 45</p>
-                        <a href="#" class="text-wedding-sage text-sm font-bold mt-2 inline-block hover:underline">Ver mapa →</a>
+                        <h3 class="font-serif text-2xl mb-2">Recepción</h3>
+                        <p class="font-bold text-gray-800">6:30 PM</p>
+                        <p class="text-gray-600">Jardín Las Fuentes</p> <!-- Placeholder, edit as needed -->
+                        <p class="text-sm text-gray-500 mt-1">Carretera a Nogales Km 10</p>
+                        <a href="#" class="text-wedding-sage text-sm font-bold mt-2 inline-block hover:underline">Ver ubicación en Maps →</a>
                     </div>
                 </div>
 
@@ -196,14 +200,14 @@
                     </div>
                     <div>
                         <h3 class="font-serif text-2xl mb-2">Código de Vestimenta</h3>
-                        <p class="text-gray-600">Formal de Día / Cóctel</p>
-                        <p class="text-sm text-gray-500 mt-1">Preferiblemente colores claros. Reservar el blanco para la novia.</p>
+                        <p class="text-gray-600">Formal / Etiqueta Rigurosa</p>
+                        <p class="text-sm text-gray-500 mt-1">Ellas: Vestido Largo. Ellos: Traje o Esmoquin.</p>
                     </div>
                 </div>
             </div>
             
             <div class="order-1 md:order-2 h-96 md:h-full min-h-[400px] rounded-2xl overflow-hidden shadow-2xl relative">
-                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1169&q=80" alt="Lugar de la boda" class="absolute inset-0 w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Decoración de boda" class="absolute inset-0 w-full h-full object-cover">
             </div>
         </div>
     </section>
@@ -213,13 +217,13 @@
         <div class="container mx-auto max-w-2xl">
             <div class="text-center mb-12">
                 <h2 class="font-serif text-4xl mb-4">Confirma tu asistencia</h2>
-                <p class="text-gray-600">Por favor confirma antes del 1 de Septiembre, 2025</p>
+                <p class="text-gray-600">Por favor confirma antes del 1 de Febrero, 2026</p>
             </div>
 
             <form id="rsvpForm" class="bg-white p-8 md:p-10 rounded-lg shadow-md space-y-6">
                 <div>
                     <label class="block text-sm font-bold text-gray-700 mb-2" for="name">Nombre Completo</label>
-                    <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-wedding-sage focus:ring-2 focus:ring-wedding-sage/20 outline-none transition-colors" type="text" id="name" placeholder="Ej. Juan Pérez" required>
+                    <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-wedding-sage focus:ring-2 focus:ring-wedding-sage/20 outline-none transition-colors" type="text" id="name" placeholder="Ej. Familia González" required>
                 </div>
 
                 <div>
@@ -233,13 +237,13 @@
 
                 <div class="relative">
                     <div class="flex justify-between items-end mb-2">
-                         <label class="block text-sm font-bold text-gray-700" for="message">Mensaje para los Novios</label>
+                         <label class="block text-sm font-bold text-gray-700" for="message">Mensaje para Maria y Gilberto</label>
                          <button type="button" onclick="openWishesGenerator()" class="text-xs flex items-center text-wedding-sage hover:text-wedding-gold transition-colors font-semibold">
                             <i data-lucide="sparkles" class="w-3 h-3 mr-1"></i>
                             Ayúdame a escribir
                          </button>
                     </div>
-                    <textarea class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-wedding-sage focus:ring-2 focus:ring-wedding-sage/20 outline-none h-32" id="message" placeholder="¿Eres alérgico a algo? ¿Alguna canción que no puede faltar?"></textarea>
+                    <textarea class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-wedding-sage focus:ring-2 focus:ring-wedding-sage/20 outline-none h-32" id="message" placeholder="Déjanos tus buenos deseos aquí..."></textarea>
                 </div>
 
                 <button type="submit" class="w-full bg-wedding-text text-white font-bold py-4 rounded-lg hover:bg-black transition-colors uppercase tracking-widest text-sm">
@@ -252,17 +256,11 @@
     <!-- Footer -->
     <footer class="bg-white py-12 border-t border-gray-100">
         <div class="container mx-auto text-center px-6">
-            <h2 class="font-serif text-3xl font-bold text-wedding-sage mb-6">Ana & Carlos</h2>
-            <p class="text-gray-500 italic mb-8">"El amor no hace girar al mundo. El amor es lo que hace que el viaje valga la pena."</p>
+            <h2 class="font-serif text-3xl font-bold text-wedding-sage mb-6">M & G</h2>
+            <p class="text-gray-500 italic mb-8">"Gracias por ser parte de nuestra historia y ayudarnos a capturar cada momento."</p>
             
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="#" class="text-gray-400 hover:text-wedding-sage transition-colors"><i data-lucide="instagram"></i></a>
-                <a href="#" class="text-gray-400 hover:text-wedding-sage transition-colors"><i data-lucide="facebook"></i></a>
-                <a href="#" class="text-gray-400 hover:text-wedding-sage transition-colors"><i data-lucide="mail"></i></a>
-            </div>
-
             <p class="text-xs text-gray-400 uppercase tracking-widest">
-                &copy; 2025. Hecho con amor.
+                Maria Yutzil & Gilberto Daniel - 21.03.2026
             </p>
         </div>
     </footer>
@@ -291,7 +289,7 @@
                     <i data-lucide="sparkles" class="w-6 h-6"></i>
                 </div>
                 <h3 class="font-serif text-2xl font-bold text-gray-800">Creador de Dedicatorias</h3>
-                <p class="text-sm text-gray-500 mt-2">Dinos un poco sobre ti y la IA escribirá un mensaje hermoso.</p>
+                <p class="text-sm text-gray-500 mt-2">Dinos un poco sobre ti y la IA escribirá un mensaje hermoso para Maria y Gilberto.</p>
             </div>
 
             <div class="space-y-4">
@@ -343,8 +341,8 @@
                         <i data-lucide="bot" class="w-5 h-5"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-sm">Asistente de Bodas</h4>
-                        <p class="text-xs text-white/80">Pregúntame lo que sea</p>
+                        <h4 class="font-bold text-sm">Asistente de Boda</h4>
+                        <p class="text-xs text-white/80">Pregúntame sobre el evento</p>
                     </div>
                 </div>
                 <button onclick="toggleChat()" class="text-white/80 hover:text-white">
@@ -360,8 +358,8 @@
                         <i data-lucide="sparkles" class="w-4 h-4 text-wedding-sage"></i>
                     </div>
                     <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 max-w-[85%]">
-                        <p class="text-gray-700">¡Hola! Soy el asistente virtual de la boda de Ana y Carlos. 💍✨</p>
-                        <p class="text-gray-700 mt-2">Puedo ayudarte con horarios, ubicación o código de vestimenta. ¿Qué necesitas saber?</p>
+                        <p class="text-gray-700">¡Hola! Soy el asistente virtual de la boda de Maria Yutzil y Gilberto Daniel. 💍✨</p>
+                        <p class="text-gray-700 mt-2">¿Tienes dudas sobre la ubicación o el álbum de fotos?</p>
                     </div>
                 </div>
             </div>
@@ -453,7 +451,7 @@
             const prompt = `Escribe un mensaje corto de felicitación para boda (RSVP).
             Relación: ${relation}.
             Tono: ${tone}.
-            Novios: Ana y Carlos.
+            Novios: Maria Yutzil y Gilberto Daniel.
             Idioma: Español.
             Máximo 2 frases.`;
 
@@ -471,7 +469,6 @@
         function useGeneratedWish() {
             document.getElementById('message').value = generatedTextArea.value;
             closeWishesModal();
-            // Scroll to message box smoothly
             document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });
         }
 
@@ -486,17 +483,15 @@
         function getPageContext() {
             return `
             Información de la boda:
-            - Novios: Ana y Carlos.
-            - Fecha: 25 de Octubre, 2025.
-            - Ceremonia: 4:00 PM en Parroquia de San Miguel (Calle Principal #123).
-            - Recepción: 6:00 PM - 2:00 AM en Hacienda El Sueño (Carretera Nacional Km 45).
-            - Código de Vestimenta: Formal de Día / Cóctel. Colores claros, blanco reservado para la novia.
-            - RSVP: Antes del 1 de Septiembre, 2025.
-            - Regalos: No especificado, pero la presencia es lo más importante.
-            - Fotos: Hay un enlace a Google Fotos para subir recuerdos.
+            - Novios: Maria Yutzil y Gilberto Daniel.
+            - Fecha: 21 de Marzo, 2026.
+            - Ceremonia: 4:00 PM en Parroquia de San José.
+            - Recepción: 6:30 PM en Jardín Las Fuentes.
+            - Código de Vestimenta: Formal / Etiqueta Rigurosa.
+            - Objetivo Principal: Que los invitados suban fotos al álbum de Google Fotos.
             
             Instrucciones para la IA:
-            Responde de manera amable, breve y servicial en Español. Eres el asistente virtual de esta boda. Usa emojis ocasionalmente.
+            Responde de manera amable y breve. Si preguntan por regalos, menciona que su presencia es lo mejor, pero pueden contribuir a su luna de miel si lo desean.
             `;
         }
 
@@ -518,7 +513,6 @@
                     </div>
                 `;
             } else {
-                // Parse markdown for bot responses
                 const parsedText = marked.parse(text);
                 div.innerHTML = `
                     <div class="bg-wedding-sage/10 p-2 rounded-full mr-2 flex-shrink-0">
@@ -563,26 +557,21 @@
             const text = chatInput.value.trim();
             if (!text) return;
 
-            // User Message
             appendMessage(text, true);
             chatInput.value = '';
             sendBtn.disabled = true;
 
-            // Bot Typing
             showTypingIndicator();
 
-            // API Call
             const systemPrompt = getPageContext();
             const reply = await callGemini(text, systemPrompt);
 
-            // Bot Reply
             removeTypingIndicator();
             appendMessage(reply, false);
             sendBtn.disabled = false;
         }
 
         // --- Common ---
-        // Close modal on outside click
         window.onclick = function(event) {
             if (event.target == wishesModal) {
                 closeWishesModal();
@@ -592,17 +581,14 @@
 
     <!-- Original Scripts -->
     <script>
-        // Initialize Icons
         lucide.createIcons();
 
-        // Mobile Menu Toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Form Handling
         const form = document.getElementById('rsvpForm');
         const modal = document.getElementById('modal');
 
@@ -616,8 +602,8 @@
             modal.classList.add('hidden');
         }
 
-        // Countdown Logic
-        const weddingDate = new Date("October 25, 2025 16:00:00").getTime();
+        // Countdown Logic for March 21, 2026
+        const weddingDate = new Date("March 21, 2026 16:00:00").getTime();
 
         const countdownFunction = setInterval(function() {
             const now = new Date().getTime();
